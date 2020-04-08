@@ -15,6 +15,7 @@ public class ViewResolver {
 		//실제url path : /WEB-INF/views/member/list.jsp
 		//action 리턴url: member/list
 		
+		//상태가 있으면 0 없으면 -1
 		if(url.indexOf("redirect:") > -1) {
 			url =request.getContextPath()+ url.replace("redirect:", "");
 			response.sendRedirect(url);

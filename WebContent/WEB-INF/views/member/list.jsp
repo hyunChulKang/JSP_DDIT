@@ -70,9 +70,9 @@
 	             			<th>전화번호</th>
 	             		</tr>
 
-		             	<c:if test="${!empty memberList }">
+		             	<c:if test="${!empty memberlist }">
 		             	
-		             		<c:forEach var="member" items="${memberList }">
+		             		<c:forEach var="member" items="${memberlist }">
 		             			<tr>
 		             				<td>${member.id}</td>
 		             				<td>${member.name}</td>
@@ -84,7 +84,7 @@
 
 		             	</c:if>
 
-		             	<c:if test="${empty memberList }">
+		             	<c:if test="${empty memberlist }">
 		             			<tr>
 		             				<td colspan="5">해당 항목이 없습니다.</td>
 		             			</tr>
@@ -109,7 +109,7 @@
 	function OpenWindow(UrlStr, WinTitle, WinWidth, WinHeight){
 		winleft =(screen.width - WinWidth) /2;
 		wintop = (screen.height - WinHeight) /2;
-		var win = window.open(UrlStr, WinTitle, "scrollbars=yes, widtj=" + WinWidth +", " +"height="+ WinHeight +", top=" +wintop
+		var win = window.open(UrlStr, WinTitle, "scrollbars=yes, width=" + WinWidth +", " +"height="+ WinHeight +", top=" +wintop
 								+", left=" +winleft +", resizable=yes, status=yes");
 		win.focus();
 	}

@@ -174,7 +174,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="row">
           	<a class="col-md-8" href="">${loginUser.id }</a>
           	<button class="btn btn-xs btn-primary col-xs-3 " type="button" 
-          		onclick="/" >Logout</button>
+          		onclick="location.href='<%=request.getContextPath() %>/commons/logout';" >Logout</button>
           </div>
           <a href="tel:${loginUser.phone }">tel : ${loginUser.phone }</a><br/>
           <a href="mailto:${loginUser.email }">email : ${loginUser.email }</a>			          

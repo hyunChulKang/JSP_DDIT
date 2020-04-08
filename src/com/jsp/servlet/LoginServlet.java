@@ -46,6 +46,7 @@ public class LoginServlet extends HttpServlet {
 			MemberServiceImpl.getInstance().login(id, pwd);
 			
 			MemberVO loginUser= MemberServiceImpl.getInstance().getMember(id);
+			
 			session.setAttribute("loginUser", loginUser);
 			session.setMaxInactiveInterval(10);
 			

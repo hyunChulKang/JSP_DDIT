@@ -28,7 +28,7 @@
 		</div>
 	</section>
 	<!-- Main content -->
-	<section class="content register-page" style="height: 586.391px; ">
+	<section class="content register-page" style="height: 586.391px;">
 		<div class="register-box">
 			<!-- form start -->
 			<div class="card">
@@ -129,7 +129,7 @@
 <!-- /.content-wrapper -->
 
 
-<form role="imageForm" action="upload/picture.do" method="post" enctype="multipart/form-data">
+<form role="imageForm" action="upload/picture" method="post" enctype="multipart/form-data">
 	<input id="inputFile" name="pictureFile" type="file" class="form-control" style="display:none;">
 	<input id="oldFile" type="hidden" name="oldPicture" value="" />
 	<input type="hidden" name="checkUpload" value="0" />	
@@ -139,7 +139,6 @@
 
 <%@ include file="/WEB-INF/views/include/open_footer.jsp" %>
 
-
-
+<%@ include file="picturn_js.jsp" %>
 
 
