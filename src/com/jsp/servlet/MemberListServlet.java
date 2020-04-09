@@ -15,9 +15,6 @@ import com.jsp.dto.MemberVO;
 import com.jsp.service.MemberServiceImpl;
 import com.jsp.utils.ViewResolver;
 
-/**
- * Servlet implementation class MemberListServlet
- */
 @WebServlet("/member/list")
 public class MemberListServlet extends HttpServlet {
        
