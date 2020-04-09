@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
 			request.setAttribute("exception", e);
 		} catch (NotFoundIDExcepiton | InvalidPasswordException e) {
 			//e.printStackTrace();
-			url="commons/loginForm";
+			url="/commons/loginForm";
 			request.setAttribute("msg", e.getMessage());
 		}
 		
