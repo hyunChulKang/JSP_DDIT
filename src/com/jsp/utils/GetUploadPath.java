@@ -17,6 +17,7 @@ public class GetUploadPath {
 		
 		try {
 			Reader reader =Resources.getResourceAsReader(resource);
+			properties.load(reader);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
