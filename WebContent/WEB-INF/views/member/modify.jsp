@@ -122,6 +122,8 @@
 							  'background-size':'cover',
 							  'background-repeat':'no-repeat'
 	});
-	
+	$('#cancelBtn').on('click',function(e){
+		history.go(-1);
+	});
 	
 </script>
