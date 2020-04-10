@@ -28,7 +28,7 @@
 		update member
 		set
 		pwd=#{pwd},email=#{email},phone=#{phone},
-		picture=#{picture}
+		picture=#{picture}, name=#{name}
 		
 		<if test="authority != null">
 			,authority = #{authority}

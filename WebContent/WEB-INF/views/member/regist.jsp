@@ -32,6 +32,18 @@
 		<div class="register-box">
 			<!-- form start -->
 			<div class="card">
+			<div class="card-header">
+			<div class="row">								
+				<div class="col-sm-6">
+					<button type="button" onclick="SubmitMemberRegist('form');" class="btn btn-info">가입하기</button>
+			 	</div>
+			 	
+			 	<div class="col-sm-6">
+					<button type="button" id="cancelBtn" onclick="CloseWindow();"
+						class="btn btn-default float-right">&nbsp;&nbsp;&nbsp;취 &nbsp;&nbsp;소&nbsp;&nbsp;&nbsp;</button>
+				</div>
+			</div>
+			</div>
 				<div class="register-card-body">
 					<form role="form" class="form-horizontal" action="regist" method="post">						
 						<input type="hidden" name="picture" />
@@ -113,20 +125,6 @@
 								</div>
 							</div>
 						</div>
-						
-						<div class="card-footer">
-							<div class="row">								
-								<div class="col-sm-6">
-									<button type="button" id="registBtn" class="btn btn-info">가입하기</button>
-							 	</div>
-							 	
-							 	<div class="col-sm-6">
-									<button type="button" id="cancelBtn" onclick="CloseWindow();"
-										class="btn btn-default float-right">&nbsp;&nbsp;&nbsp;취 &nbsp;&nbsp;소&nbsp;&nbsp;&nbsp;</button>
-								</div>
-							
-							</div>
-						</div>
 					</form>					
 				</div><!-- register-card-body -->
 			</div>
@@ -146,6 +144,4 @@
 
 <%@ include file="/WEB-INF/views/include/open_footer.jsp" %>
 
-<%@ include file="picturn_js.jsp" %>
-<%@ include file="regist_js.jsp" %>
-
+<%@ include file="picture_js.jsp" %>

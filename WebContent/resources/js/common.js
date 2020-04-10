@@ -10,3 +10,22 @@ function CloseWindow(){
 	window.opener.location.reload(true);
 	window.close();
 }
+
+function SubmitMemberRegist(formRole){
+	alert(formRole+" submit !");
+	var uploadCheck = $('input[name="checkUpload"]').val();
+	if(!(uploadCheck>0)){
+		alert("업로드한 사진이 없습니다.")
+		//$('input[name="pictureFile"]').click();
+		return;
+}
+
+	var form = $('form[role="'+formRole+'"]');
+	form.submit();
+}
+
+function SubmitModify(form){
+	alert(form +"submit!!");
+	var forms = $('form[role="'+form+'"]');
+	forms.submit();
+}
