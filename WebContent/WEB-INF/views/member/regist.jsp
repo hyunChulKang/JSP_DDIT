@@ -66,12 +66,11 @@
 							 <label for="id" class="col-sm-3" style="font-size:0.9em;" >
 							 	<span style="color:red;font-weight:bold;">*</span>아이디</label>	
 							<div class="col-sm-9 input-group input-group-sm">
+							<input type="hidden" name="checkID" />
 								<input name="id" 
 									onkeyup="this.value=this.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣]/g, &#39;&#39;);"
-								type="text" class="form-control" id="id" placeholder="13글자 영문자,숫자 조합">
-								<span class="input-group-append-sm">	
-									<button type="button" onclick="idCheck_go();"  class="btn btn-info btn-sm btn-append">중복확인</button>
-								</span>								
+								type="text" class="form-control" id="id" oninput="idCheck_go();" placeholder="13글자 영문자,숫자 조합" style="border-right:1px">
+								<span id="checkLogging"></span>								
 							</div>								
 						</div>
 						<div class="form-group row">
@@ -139,6 +138,28 @@
 	<input id="oldFile" type="hidden" name="oldPicture" value="" />
 	<input type="hidden" name="checkUpload" value="0" />	
 </form>
+<script>
+	function idCheck_go(){
+		var id_check = $('input[name=id]').val();
+		
+		$.ajax({
+			url:'<%=request.getContextPath()%>/member/idCheck?id='+id_check,
+			type:'get',
+			success:function(data){
+				if(data==""){
+					$('span[id=checkLogging]').text("사용가능");
+					$('span[id=checkLogging]').css('color','blue');
+					$('input[name=checkID]').val(id_check);
+				}else{
+					$('span[id=checkLogging]').text("사용불가");
+					$('span[id=checkLogging]').css('color','red');
+				}
+			}
+		});
+	}
+</script>
+
+
 
 
 
