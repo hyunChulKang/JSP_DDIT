@@ -69,7 +69,7 @@
 							<input type="hidden" name="checkID" />
 								<input name="id" 
 									onkeyup="this.value=this.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣]/g, &#39;&#39;);"
-								type="text" class="form-control" id="id" oninput="idCheck_go();" placeholder="13글자 영문자,숫자 조합" style="border-right:1px">
+								type="text" class="form-control" id="id" oninput="idCheck_go();" placeholder="13글자 영문자,숫자 조합" style="border-right: 1px solid #ced4da;"] />
 								<span id="checkLogging"></span>								
 							</div>								
 						</div>
