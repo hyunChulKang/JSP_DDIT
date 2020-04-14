@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="decorator"  uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+<title><decorator:title default="디폴트헤더제목" /></title>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
@@ -18,6 +20,6 @@
   
   <!-- jQuery -->
   <script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
-	
+<decorator:head />
 </head>
 <body class="hold-transition sidebar-mini">
