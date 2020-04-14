@@ -2,7 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <script>
-	alert("${param.id}님은 정지가되었습니다.")
+alert("접근이 제한되었습니다.");
+if(window.opener){
 	window.close();
-	window.location.reload(true);
+}else{
+	histroy.go(-1);
+}
 </script>

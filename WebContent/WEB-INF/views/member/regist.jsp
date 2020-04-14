@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
+<%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 
-<%@ include file="/WEB-INF/views/include/open_header.jsp" %>
+<body>
 	<!-- Content Wrapper. Contains page content -->
  <div class="content-        wrapper">
 	<!-- Content Header (Page header) -->
@@ -163,6 +164,5 @@
 
 
 
-<%@ include file="/WEB-INF/views/include/open_footer.jsp" %>
-
 <%@ include file="picture_js.jsp" %>
+</body>

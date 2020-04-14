@@ -34,8 +34,6 @@ public class LoginCheckFilter implements Filter {
 		//제외할 url 확인
 		String reqUrl=httpReq.getRequestURI()
 				.substring(httpReq.getContextPath().length());
-			
-		
 		if(excludeCheck(reqUrl)) {
 			chain.doFilter(request, response);	
 			return;
@@ -60,7 +58,7 @@ public class LoginCheckFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
 		String excludeURLNames=fConfig.getInitParameter("exclude");
 		StringTokenizer st= new StringTokenizer(excludeURLNames,",");
-		while(st.hasMoreElements()) {
+		while(st.hasMoreTokens()) {
 			exURLs.add(st.nextToken());
 		}	
 	}
