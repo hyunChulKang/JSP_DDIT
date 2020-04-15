@@ -75,7 +75,7 @@ public class MemberDAOImpl implements MemberDAO{
 	@Override
 	public void deleteMember(String id) throws SQLException {
 		SqlSession session= sessionFactory.openSession(true);
-		session.update("Member-Mapper.updateMember",id);
+		session.update("Member-Mapper.deletMember",id);
 		session.close();
 	}
 	@Override

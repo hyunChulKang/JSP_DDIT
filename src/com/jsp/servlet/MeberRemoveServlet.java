@@ -8,29 +8,26 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import com.jsp.dto.MemberVO;
 import com.jsp.service.MemberServiceImpl;
+import com.jsp.utils.ViewResolver;
 
-@WebServlet("/member/pwdCheck")
-public class CheckPaswordServlet extends HttpServlet {
+@WebServlet("/member/remove")
+public class MeberRemoveServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
-		String mempwd ="";
-		
+		String id= request.getParameter("id");
+		String url="member/remove_success";
 		try {
-			MemberVO mem = null;
-			mem=MemberServiceImpl.getInstance().getMember(id);
-			if(mem!=null) {
-				mempwd=mem.getPwd();
-			}
+			MemberServiceImpl.getInstance().remove(id);
 		} catch (SQLException e) {
 			e.printStackTrace();
+			url="error/500_error";
+			request.setAttribute("exception", e);
 		}
-		response.getWriter().write(mempwd);
 		
+		ViewResolver.view(request, response, url);
 	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

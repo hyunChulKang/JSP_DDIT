@@ -8,7 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.jsp.dto.MemberVO;
 import com.jsp.service.MemberServiceImpl;
 import com.jsp.utils.ViewResolver;
 
@@ -17,14 +19,18 @@ public class EnabledServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="member/enabled_success";
 		String id = request.getParameter("id");
-		try {
-			MemberServiceImpl.getInstance().enabled(id);
-			
-		} catch (SQLException e) {
-			url="member/disabled_fail";
-			e.printStackTrace();
+		HttpSession session = request.getSession();
+		MemberVO member= (MemberVO) session.getAttribute("loginUser");
+		if(member.getId().equals(id)) {
+			url="member/disabled_denied";
+		}else {
+			try {
+				MemberServiceImpl.getInstance().enabled(id);
+			} catch (SQLException e) {
+				url="error/500_error";
+				request.setAttribute("exception", e);
+			}
 		}
-		
 		ViewResolver.view(request, response, url);
 	}
 

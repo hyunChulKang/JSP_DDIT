@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <script>
-	alert("${param.id}님은 정지가되었습니다.")
+	alert("${member.id} 회원을 삭제했습니다. ");
+	window.close();
 	window.opener.location.reload(true);
 </script>

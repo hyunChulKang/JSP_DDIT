@@ -31,7 +31,7 @@
     <filter-class>com.jsp.filter.MemberDisabledFilter</filter-class>
     <init-param>
       <param-name>checkURL</param-name>
-      <param-value>regist,modify,disabled</param-value>
+      <param-value>regist,modify,disabled,enabled,pwdCheck</param-value>
     </init-param>
   </filter>
   <filter-mapping>
