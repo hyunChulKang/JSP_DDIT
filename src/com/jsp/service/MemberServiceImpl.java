@@ -10,17 +10,21 @@ import com.jsp.exception.InvalidPasswordException;
 import com.jsp.exception.NotFoundIDExcepiton;
 
 public class MemberServiceImpl implements MemberService{
-
-	private MemberDAO memberDAO=MemberDAOImpl.getMemberDaoImpl();
 	private static MemberServiceImpl instance = new MemberServiceImpl();
 	private MemberServiceImpl() {}
 	public static MemberServiceImpl getInstance() {
 		return instance;
 	}
 	
+	private MemberDAO memberDAO;/*=MemberDAOImpl.getMemberDaoImpl();*/
+	public void setMemberDAO(MemberDAO memberDAO) {
+		this.memberDAO=memberDAO;
+		System.out.println(memberDAO.toString()+"-----");
+	}
 	@Override
 	public void login(String id, String pwd) throws SQLException, NotFoundIDExcepiton, InvalidPasswordException {
 	MemberVO member = memberDAO.selectMemberById(id);
+	
 	if(member ==null) throw new NotFoundIDExcepiton();
 	if(!pwd.equals(member.getPwd())) throw new InvalidPasswordException();
 	}
