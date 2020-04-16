@@ -4,12 +4,7 @@
 <%@ include file="/WEB-INF/views/include/open_header.jsp" %>
 
 
-
-
-
 <decorator:body />
-
-
 
 
 
