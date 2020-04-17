@@ -3,11 +3,13 @@ package com.jsp.dao;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.jsp.dto.MemberVO;
+import com.jsp.request.SearchCriteria;
 
 public class MemberDAOImpl implements MemberDAO{
 	/*SqlSessionFactory sqlSessionFactory;
@@ -38,6 +40,7 @@ public class MemberDAOImpl implements MemberDAO{
 		}finally {		//에러 발생시에도 무조건 세션닫히도록 한다.
 			session.close();
 		}
+		System.out.println(memberList.toString()+"리스트!");
 		return memberList;
 	}
 
@@ -93,6 +96,31 @@ public class MemberDAOImpl implements MemberDAO{
 		session.close();
 
 		
+	}
+
+	@Override
+	public List<MemberVO> selectMemberList(SearchCriteria cri) throws SQLException {
+		SqlSession session = sessionFactory.openSession(true);
+		
+		int offset = cri.getPageStartRowNum();
+		int limit = cri.getPerPageNum();
+		RowBounds rowBounds = new RowBounds(offset, limit);
+		List<MemberVO> memberList = null;
+		
+		memberList=session.selectList("Member-Mapper.selectSearchMemberList",cri,rowBounds);
+		
+		session.close();
+		return memberList;
+	}
+
+	@Override
+	public int selectMemberListCount(SearchCriteria cri) throws SQLException {
+		int count=0;
+		SqlSession session = sessionFactory.openSession(true);
+		count=session.selectOne("Member-Mapper.selectSearchMemberListCount",cri);
+		
+		session.close();
+		return count;
 	}
 
 }

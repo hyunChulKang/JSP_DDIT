@@ -42,7 +42,7 @@ body.login-page{
 
 			<form action="<%=request.getContextPath() %>/commons/login"	method="post">
 				<div class="form-group has-feedback">													<%-- 아이디가 틀렸을때 남는 잔상 --%>
-					<input type="text" class="form-control" name="id" placeholder="아이디를 입력하세요." value="mimi<%-- ${param.id} --%>">
+					<input type="text" class="form-control" autofocus name="id" placeholder="아이디를 입력하세요." value="mimi<%-- ${param.id} --%>">
 					<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
