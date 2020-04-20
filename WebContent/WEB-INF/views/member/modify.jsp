@@ -31,7 +31,7 @@
   
     <section class="content register-page" style="height: 586.391px;">       
 		<div class="register-box" style="min-width:450px;">
-	    	<form role="form" class="form-horizontal" action="modify" method="post">
+	    	<form role="form" class="form-horizontal" action="modify.do" method="post">
 				<input type="hidden" name="picture" value="${member.picture }" />
 	        	<div class="register-card-body" >
 	        		<div class="row">		

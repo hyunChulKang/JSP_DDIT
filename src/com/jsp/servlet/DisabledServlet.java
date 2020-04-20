@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.swing.text.View;
 
+import com.jsp.dispatcher.ViewResolver;
 import com.jsp.dto.MemberVO;
 import com.jsp.service.MemberServiceImpl;
-import com.jsp.utils.ViewResolver;
 
-@WebServlet("/member/disabled")
+//@WebServlet("/member/disabled")
 public class DisabledServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="member/disabled";

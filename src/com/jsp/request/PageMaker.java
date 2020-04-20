@@ -15,11 +15,13 @@ public class PageMaker {
 	//starPage, endPage, prev , next 설정. by totalCount
 	
 	private void calcData() {
+		//(페이지 번호/한페이지에 보여줄 페이번호 개수 (1/10) ) *한페이지에 보여줄 페이지번호 개수 (10))= 마지막 페이지 번호(10)
 		endPage = (int)(Math.ceil(cri.getPage()/(double)displayPageNum) *displayPageNum);
-		startPage=(endPage - displayPageNum) + 1;
-		
+		//마지막 페이지 번호 - 한페이지보여줄 페이지번호 갯수 (10-10)+1  = 1
+		startPage=(endPage - displayPageNum) + 1;	
+		//총리스트 개수/보여줄 행의 갯수 (13/10) 올림 -> 2 2가 realEndPage수
 		realEndPage = (int)(Math.ceil(totalCount/(double)cri.getPerPageNum()));
-		
+		//startPage가 1일때 
 		if(startPage<0) {
 			startPage=1;
 		}

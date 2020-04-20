@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jsp.dispatcher.ViewResolver;
 import com.jsp.dto.MemberVO;
 import com.jsp.service.MemberServiceImpl;
-import com.jsp.utils.ViewResolver;
 
-@WebServlet("/member/detail")
+//@WebServlet("/member/detail")
 public class MemberDetailServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

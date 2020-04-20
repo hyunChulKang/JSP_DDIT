@@ -6,7 +6,7 @@
 
  <nav aria-label="member list Navigation">
 	<ul class="pagination justify-content-center m-0">
-		<li class="page-item">
+		<li class=" ">
 			<a class="page-link" href="javascript:searchList_go(1);">
 			<i class="fas fa-angle-double-left"></i>
 			</a>
@@ -51,7 +51,7 @@ function searchList_go(page){
 	jobForm.find("[name='page']").val(page);
 	jobForm.find("[name='searchType']").val($('select[name="searchType"]').val());
 	jobForm.find("[name='keyword']").val($('div.input-group>input[name="keyword"]').val());	
-	jobForm.attr("action","list").attr("method","post");
+	jobForm.attr("action","list.do").attr("method","post");
 	jobForm.submit();
 }
 </script>

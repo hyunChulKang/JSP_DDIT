@@ -110,7 +110,7 @@
 
 
 <script>
-	var imageURL ="picture/get?picture=${member.picture}";
+	var imageURL ="pictureView/view.do?picture=${member.picture}";
 	$('div#pictureView').css({'background-image' :'url('+imageURL+')',
 							  'background-position' : 'center',
 							  'background-size' : 'cover',
@@ -118,25 +118,25 @@
 	});
 	
 	$('#modifyBtn').on('click',function(e){
-		location.href="modify?id=${member.id}";
+		location.href="modifyForm.do?id=${member.id}";
 		
 	});
 	$('#disabled').on('click',function(e){
-		location.href="disabled?id=${member.id}";
+		location.href="disabled.do?id=${member.id}";
 	});
 	$('#enabled').on('click',function(e){
-		location.href="enabled?id=${member.id}";
+		location.href="enabled.do?id=${member.id}";
 	});
 	$('#deleteBtn').on('click',function(e){
 	
 		var pwd =prompt("암호를 입력하세요");
 		$.ajax({
-			url:'pwdCheck?id=${member.id}',
+			url:'pwdCheck.do?id=${member.id}',
 			type:'get',
 			success:function(data){
 				alert(data);
 				if(data==pwd){
-					location.href="remove?id=${member.id}";
+					location.href="remove.do?id=${member.id}";
 				}else{
 					alert("패스워드가 일치하지 않습니다.")
 				}

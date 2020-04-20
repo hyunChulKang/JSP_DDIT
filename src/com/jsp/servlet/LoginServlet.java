@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.jsp.dispatcher.ViewResolver;
 import com.jsp.dto.MemberVO;
 import com.jsp.exception.InvalidPasswordException;
 import com.jsp.exception.NotFoundIDExcepiton;
 import com.jsp.service.MemberServiceImpl;
-import com.jsp.utils.ViewResolver;
 
-@WebServlet("/commons/login")
+//@WebServlet("/commons/login")
 public class LoginServlet extends HttpServlet {
 /*	최초 실행시 한번 실행됨
 	public void init(ServletConfig config) throws ServletException {

@@ -4,6 +4,6 @@
 
 
 
- <jsp:forward page="/commons/login"/>
+ <%-- <jsp:forward page="/commons/login"/> --%>
 
-<%--  <%@ include file="/WEB-INF/views/commons/loginForm.jsp\" %> --%>
+ <%@ include file="/WEB-INF/views/commons/loginForm.jsp" %>

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.jsp.utils.GetUploadPath;
 
-@WebServlet("/member/picture/get")
+//@WebServlet("/member/picture/get")
 public class GetPictureServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -42,8 +42,6 @@ public class GetPictureServlet extends HttpServlet {
 		if(mimeType ==null) {
 			mimeType = "applicatuion/octet-stream";
 		}
-		System.out.println("MIME type: " + mimeType);
-		
 		//response 수정.
 		response.setContentType(mimeType);
 		response.setContentLength((int)downloadFile.length());

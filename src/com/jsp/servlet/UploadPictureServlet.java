@@ -20,11 +20,11 @@ import com.jsp.utils.GetUploadPath;
 import com.jsp.utils.MakeFileName;
 import com.jsp.utils.MakeLogForException;
 
-@WebServlet("/member/picture")
+//@WebServlet("/member/picture")
 public class UploadPictureServlet extends HttpServlet {
 	/*업로드 하기위해선 doGet을 닫아 놔야한다.*/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		return;
+		doPost(request, response);
 	}
 
 	//업로드 파일 환경 설정
@@ -72,7 +72,6 @@ public class UploadPictureServlet extends HttpServlet {
 		
 		//업로드 request 크키 적용.
 		upload.setSizeMax(MAX_REQUEST_SIZE);
-		System.out.println(upload);
 		//실제 저장경로를 설정
 		String uploadPath = GetUploadPath.getUploadPath("member.picture.upload");
 		File file =new File(uploadPath);

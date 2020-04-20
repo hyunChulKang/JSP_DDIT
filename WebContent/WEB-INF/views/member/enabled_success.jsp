@@ -3,5 +3,5 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <script>
 	alert("${param.id}님은 정지가되었습니다.")
-	location.href="detail?id=${param.id}";
+	location.href="detail.do?id=${param.id}";
 </script>

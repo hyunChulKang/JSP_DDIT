@@ -43,7 +43,7 @@
 			return;
 		};
 		$.ajax({
-			url:"<%=request.getContextPath()%>/member/picture",
+			url:"<%=request.getContextPath()%>/member/picture.do",
 			data:form,
 			type:'post',
 			processData:false,

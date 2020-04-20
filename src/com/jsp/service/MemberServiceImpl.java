@@ -23,7 +23,6 @@ public class MemberServiceImpl implements MemberService{
 	private MemberDAO memberDAO;/*=MemberDAOImpl.getMemberDaoImpl();*/
 	public void setMemberDAO(MemberDAO memberDAO) {
 		this.memberDAO=memberDAO;
-		System.out.println(memberDAO.toString()+"-----");
 	}
 	@Override
 	public void login(String id, String pwd) throws SQLException, NotFoundIDExcepiton, InvalidPasswordException {
@@ -68,12 +67,15 @@ public class MemberServiceImpl implements MemberService{
 	}
 	@Override
 	public Map<String, Object> getMemberList(SearchCriteria cri) throws SQLException {
+		//기존에 전달하는 리스트 
 		List<MemberVO> memberList = memberDAO.selectMemberList(cri);
 		
+		//Totalcount를 얻기 
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
+		System.out.println(cri.toString());
 		pageMaker.setTotalCount(memberDAO.selectMemberListCount(cri));
-		
+		System.out.println( memberDAO.selectMemberListCount(cri)+"<-----selectMemberListCount 갯수");
 		Map<String, Object> dataMap = new HashMap<String, Object>();
 		dataMap.put("memberList", memberList);
 		dataMap.put("pageMaker", pageMaker);

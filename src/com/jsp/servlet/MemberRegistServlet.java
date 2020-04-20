@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jsp.dispatcher.ViewResolver;
 import com.jsp.dto.MemberVO;
 import com.jsp.request.MemberRegistRequest;
 import com.jsp.service.MemberServiceImpl;
-import com.jsp.utils.ViewResolver;
 
-@WebServlet("/member/regist")
+//@WebServlet("/member/regist")
 public class MemberRegistServlet extends HttpServlet {
 	/*해당 회원가입 화면을 가져온다*/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

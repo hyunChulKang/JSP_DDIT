@@ -49,4 +49,11 @@ public class SearchCriteria {
 	public int getPageStartRowNum() {
 		return (this.page-1)*perPageNum;
 	}
+
+	@Override
+	public String toString() {
+		return "SearchCriteria [page=" + page + ", perPageNum=" + perPageNum + ", searchType=" + searchType
+				+ ", keyword=" + keyword + "]";
+	}
+	
 }

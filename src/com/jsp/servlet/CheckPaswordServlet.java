@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.jsp.dto.MemberVO;
 import com.jsp.service.MemberServiceImpl;
 
-@WebServlet("/member/pwdCheck")
+//@WebServlet("/member/pwdCheck")
 public class CheckPaswordServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");

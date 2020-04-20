@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jsp.dispatcher.ViewResolver;
 import com.jsp.service.MemberServiceImpl;
-import com.jsp.utils.ViewResolver;
 
-@WebServlet("/member/remove")
+//@WebServlet("/member/remove")
 public class MeberRemoveServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id= request.getParameter("id");

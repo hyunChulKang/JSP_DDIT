@@ -40,7 +40,6 @@ public class MemberDAOImpl implements MemberDAO{
 		}finally {		//에러 발생시에도 무조건 세션닫히도록 한다.
 			session.close();
 		}
-		System.out.println(memberList.toString()+"리스트!");
 		return memberList;
 	}
 
@@ -72,7 +71,6 @@ public class MemberDAOImpl implements MemberDAO{
 	@Override
 	public void updateMember(MemberVO member) throws SQLException {
 		SqlSession session= sessionFactory.openSession(true);
-		System.out.println(member.toString());
 		session.update("Member-Mapper.updateMember",member);
 		session.close();
 	}

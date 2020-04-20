@@ -15,7 +15,7 @@ import com.jsp.service.MemberServiceImpl;
 /**
  * Servlet implementation class CheckIDServlet
  */
-@WebServlet("/member/idCheck")
+//@WebServlet("/member/idCheck")
 public class CheckIDServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	String id = request.getParameter("id");

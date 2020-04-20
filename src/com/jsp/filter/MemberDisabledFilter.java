@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.jsp.dispatcher.ViewResolver;
 import com.jsp.dto.MemberVO;
-import com.jsp.utils.ViewResolver;
 public class MemberDisabledFilter implements Filter {
 
 	private List<String> checkURLs=new ArrayList<String>(); 
@@ -31,8 +31,6 @@ public class MemberDisabledFilter implements Filter {
 		
 		String uri =httpReq.getRequestURI();
 		
-		System.out.println(uri+"<===uri");	
-
 		MemberVO loginUser= (MemberVO) httpReq.getSession().getAttribute("loginUser");
 		if(loginUser!=null && loginUser.getEnabled()!=1) {
 			for(String url :checkURLs) {
