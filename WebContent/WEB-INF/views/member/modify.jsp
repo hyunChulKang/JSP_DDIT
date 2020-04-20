@@ -41,7 +41,7 @@
 								<div class="input-group input-group-sm">
 									<label for="inputFile" class=" btn btn-warning btn-sm btn-flat input-group-addon">파일선택</label>
 																												<%--수정시 기존 이미지를 넣어둔다 --%>
-									<input id="inputFileName" class="form-control" type="text" name="picture" value="${member.picture }"/>
+									<input id="inputFileName" class="form-control" type="text" name="picture" value=""/>
 									<span class="input-group-append-sm">											
 										<button type="button" class="btn btn-info btn-sm btn-append" onclick="upload_go();">업로드</button>											
 									</span>
@@ -114,7 +114,7 @@
 
 <%@ include file="picture_js.jsp" %>
 <script>
-	var imageURL="picture/get?picture=${member.picture}";
+	var imageURL="pictureView/view.do?picture=${member.picture}";
 	$('div#pictureView').css({'background-image':'url('+imageURL+')',
 							  'background-position':'center',
 							  'background-size':'cover',

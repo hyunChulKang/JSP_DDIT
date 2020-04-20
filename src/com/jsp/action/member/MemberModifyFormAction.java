@@ -25,7 +25,7 @@ public class MemberModifyFormAction implements Action {
 		String url="member/modify";
 		String id =request.getParameter("id");
 		try {
-			MemberVO member= MemberServiceImpl.getInstance().getMember(id);
+			MemberVO member= memberService.getMember(id);
 			
 			request.setAttribute("member", member);
 		} catch (SQLException e) {

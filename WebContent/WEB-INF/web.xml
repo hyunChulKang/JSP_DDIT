@@ -4,6 +4,10 @@
     <param-name>memberDAOType</param-name>
     <param-value>com.jsp.dao.MemberDAOImpl</param-value>
   </context-param>
+    <context-param>
+    <param-name>boardDAOType</param-name>
+    <param-value>com.jsp.dao.BoardDAOImpl</param-value>
+  </context-param>
   <context-param>
     <param-name>sqlSessionFactory</param-name>
     <param-value>com.jsp.mybatis.OracleMyBatisSqlSessionFactory</param-value>

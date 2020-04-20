@@ -26,6 +26,9 @@ public class MemberServiceImpl implements MemberService{
 	}
 	@Override
 	public void login(String id, String pwd) throws SQLException, NotFoundIDExcepiton, InvalidPasswordException {
+	if(memberDAO == null) {
+		System.out.println("memberDAO가 null이래~~~~~~~" );
+	}
 	MemberVO member = memberDAO.selectMemberById(id);
 	
 	if(member ==null) throw new NotFoundIDExcepiton();

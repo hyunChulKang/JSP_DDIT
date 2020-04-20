@@ -11,10 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.jsp.action.Action;
 import com.jsp.request.SearchCriteria;
 import com.jsp.service.BoardService;
+import com.jsp.service.BoardServiceImpl;
 
-public class BoardListAction implements Action {
+public class BoardListFormAction implements Action {
 
-	private BoardService boardService;
+	private BoardService boardService =BoardServiceImpl.getInstance();
 	public void setBoardService(BoardService boardService) {
 		this.boardService=boardService;
 	}
@@ -22,7 +23,7 @@ public class BoardListAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url="board/list.do";
+		String url="board/list";
 		
 		String page= request.getParameter("page");
 		String perPageNum = request.getParameter("perPageNum");
@@ -42,7 +43,7 @@ public class BoardListAction implements Action {
 			cri.setSearchType(searchType);
 			cri.setKeyword(keyword);
 		}
-		
+		System.out.println(boardService+"boardService 있나???");
 		try {
 			Map<String, Object> dataMap = boardService.getBoardList(cri);
 			request.setAttribute("dataMap", dataMap);

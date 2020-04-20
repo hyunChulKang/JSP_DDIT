@@ -22,18 +22,18 @@ public class MemberPirctureViewAction implements Action {
 		String savedPath = GetUploadPath.getUploadPath("member.picture.upload");
 		
 		String filePath = savedPath+fileName ;
-		sendFile(response,filePath);
+		sendFile(response,request,filePath);
 		
 		return null;
 	
 	}
 	
-	private void sendFile(HttpServletResponse response, String filePath)throws ServletException, IOException {
+	private void sendFile(HttpServletResponse response,HttpServletRequest request, String filePath)throws ServletException, IOException {
 		//보낸 파일 설정.
 		File downloadFile = new File(filePath);
 		FileInputStream inStream = new FileInputStream(downloadFile);
 		
-		ServletContext context =null;
+		ServletContext context =request.getServletContext();
 		
 		//파일 포맷으로 MIME를 결정한다.
 		String mimeType =context.getMimeType(filePath);
