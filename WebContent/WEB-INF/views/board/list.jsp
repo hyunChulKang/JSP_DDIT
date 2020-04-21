@@ -31,7 +31,7 @@
     <section class="content">		
 		<div class="card">
 			<div class="card-header with-border">
-				<button type="button" class="btn btn-primary" id="registBtn" onclick="OpenWindow('registForm.do','글등록',600,400);">글등록</button>				
+				<button type="button" class="btn btn-primary" id="registBtn" onclick="OpenWindow('registForm.do','글등록',800,700);">글등록</button>				
 				<div id="keyword" class="card-tools" style="width:350px;">
 					<div class="input-group row">						
 						<select class="form-control col-md-4" name="searchType" id="searchType">
@@ -113,7 +113,6 @@
 	</form>
    	
 <script>
-	
 	$('#searchBtn').on('click',function(e){
 		/* 
 		if($('input[name="keyword"]').val() !=""){

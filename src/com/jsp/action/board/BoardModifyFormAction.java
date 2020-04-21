@@ -10,10 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.jsp.action.Action;
 import com.jsp.dto.BoardVO;
 import com.jsp.service.BoardService;
+import com.jsp.service.BoardServiceImpl;
 
 public class BoardModifyFormAction implements Action{
 
-	private BoardService boardService;
+	private BoardService boardService =BoardServiceImpl.getInstance();
 	public void setBoardService(BoardService boardService) {
 		this.boardService= boardService;
 	}
@@ -21,12 +22,12 @@ public class BoardModifyFormAction implements Action{
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url="board/modifyBoard.do";
+		String url="board/modifyBoard";
 		
 		try {
 		int bno = Integer.parseInt(request.getParameter("bno"));
 		
-		BoardVO board;
+		BoardVO board= new BoardVO();
 			board = boardService.getBoardForModify(bno);
 			request.setAttribute("board", board);
 		} catch (SQLException e) {

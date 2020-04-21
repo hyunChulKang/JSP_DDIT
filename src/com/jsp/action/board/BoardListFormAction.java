@@ -43,7 +43,6 @@ public class BoardListFormAction implements Action {
 			cri.setSearchType(searchType);
 			cri.setKeyword(keyword);
 		}
-		System.out.println(boardService+"boardService 있나???");
 		try {
 			Map<String, Object> dataMap = boardService.getBoardList(cri);
 			request.setAttribute("dataMap", dataMap);

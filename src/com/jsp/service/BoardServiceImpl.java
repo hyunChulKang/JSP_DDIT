@@ -27,43 +27,52 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public Map<String, Object> getBoardList(SearchCriteria cri) throws SQLException {
-		List<BoardVO> memberList = boardDAO.selectBoardCriteria(cri);
-		
+		List<BoardVO> boardList = boardDAO.selectBoardCriteria(cri);
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		System.out.println(cri.toString());
 		pageMaker.setTotalCount(boardDAO.selectBoardCriteriaTotalCount(cri));
 		System.out.println( boardDAO.selectBoardCriteriaTotalCount(cri)+"<-----selectMemberListCount 갯수");
 		Map<String, Object> dataMap = new HashMap<String, Object>();
-		dataMap.put("memberList", memberList);
+		dataMap.put("boardList", boardList);
 		dataMap.put("pageMaker", pageMaker);
 		return dataMap;
 	}
 
 	@Override
 	public BoardVO getBoard(int bno) throws SQLException {
-		return null;
+		BoardVO vo = new BoardVO();
+		vo=boardDAO.selectBoardByBno(bno);
+			boardDAO.increaseViewCnt(bno);
+		
+		return vo;
 	}
 
 	@Override
 	public BoardVO getBoardForModify(int bno) throws SQLException {
+		BoardVO vo = new BoardVO();
+		vo=boardDAO.selectBoardByBno(bno);
 		
-		return null;
+		return vo;
 	}
 
 	@Override
 	public void write(BoardVO board) throws SQLException {
-		
+		int cnt =0;
+		cnt=boardDAO.selectBoardSeqNext();
+		System.out.println("cnt( 보드번호)" + cnt);
+		board.setBno(cnt);
+		boardDAO.insertBoard(board);
 	}
 
 	@Override
 	public void modify(BoardVO board) throws SQLException {
-		
+		boardDAO.updateBoard(board);
 	}
 
 	@Override
 	public void remove(int bno) throws SQLException {
-		
+		boardDAO.deleteBoard(bno);
 	}
 	
 
