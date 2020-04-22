@@ -13,14 +13,14 @@ import com.jsp.request.SearchCriteria;
 
 public class BoardDAOImpl implements BoardDAO {
 	
-	private SqlSessionFactory sessionFactory;
-	public void setSqlSessionFactory(SqlSessionFactory sessionFactory) {
-		this.sessionFactory=sessionFactory;
+	private SqlSessionFactory sqlSessionFactory;
+	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
+		this.sqlSessionFactory=sqlSessionFactory;
 	}
 
 	@Override
 	public List<BoardVO> selectBoardCriteria(SearchCriteria cri) throws SQLException {
-		SqlSession session =sessionFactory.openSession();
+		SqlSession session =sqlSessionFactory.openSession();
 		List<BoardVO> boardList = null;
 		
 		int offset = cri.getPageStartRowNum();
@@ -38,7 +38,7 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public int selectBoardCriteriaTotalCount(SearchCriteria cri) throws SQLException {
 		int count=0;
-		SqlSession session = sessionFactory.openSession();
+		SqlSession session = sqlSessionFactory.openSession();
 		count=session.selectOne("Board-Mapper.selectBoardCriteriaTotalCount",cri);
 		session.close();
 		return count;
@@ -47,7 +47,7 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public BoardVO selectBoardByBno(int bno) throws SQLException {
 		BoardVO vo = new BoardVO();
-			SqlSession session = sessionFactory.openSession();
+			SqlSession session = sqlSessionFactory.openSession();
 			vo=session.selectOne("Board-Mapper.selectBoardByBno", bno);
 			session.close();
 		return vo;
@@ -55,7 +55,7 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public void insertBoard(BoardVO board) throws SQLException {
-		SqlSession session = sessionFactory.openSession(true);
+		SqlSession session = sqlSessionFactory.openSession(true);
 		System.out.println(board.toString()+"13242wrghbdfgutjdy");
 		int count=0;
 		count=session.insert("Board-Mapper.insertBoard",board);
@@ -65,14 +65,14 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public void updateBoard(BoardVO board) throws SQLException {
-		SqlSession session = sessionFactory.openSession(true);
+		SqlSession session = sqlSessionFactory.openSession(true);
 		session.update("Board-Mapper.updateBoard",board);
 		session.close();
 	}
 
 	@Override
 	public void deleteBoard(int bno) throws SQLException {
-		SqlSession session =sessionFactory.openSession(true);
+		SqlSession session =sqlSessionFactory.openSession(true);
 		session.delete("Board-Mapper.deleteBoard",bno);
 		session.close();
 
@@ -80,7 +80,7 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public void increaseViewCnt(int bno) throws SQLException {
-		SqlSession session = sessionFactory.openSession(true);
+		SqlSession session = sqlSessionFactory.openSession(true);
 		session.update("Board-Mapper.increaseViewCnt",bno);
 		session.close();
 	}
@@ -88,7 +88,7 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public int selectBoardSeqNext() throws SQLException {
 		int cnt=0;
-		SqlSession session = sessionFactory.openSession();
+		SqlSession session = sqlSessionFactory.openSession();
 		cnt=session.selectOne("Board-Mapper.selectBoardSeqNext");
 		return cnt;
 	}

@@ -3,6 +3,6 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <script>
 	alert("글수정완료");
-	window.close();
-	window.opener.location.reload(true);
+	window.location.href="detail.do?bno=${param.bno}&flag=inTheModify";
+	
 </script>>

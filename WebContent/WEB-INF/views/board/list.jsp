@@ -72,7 +72,7 @@
 						<tr style='font-size:0.85em;'>
 							<td>${board.bno }</td>
 							<td id="boardTitle" style="text-align:left;max-width: 100px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-							<a href="javascript:OpenWindow('detail.do${pageMaker.makeQuery(pageMaker.cri.page) }&bno=${board.bno }','상세보기',600,400);">
+							<a href="javascript:OpenWindow('detail.do${pageMaker.makeQuery(pageMaker.cri.page) }&bno=${board.bno }&flag=inThelist','상세보기',600,400);">
 								<span class="col-sm-12 ">${board.title }
 									<c:if test="${board.replycnt ne 0 }">		
 										<span class="nav-item">															

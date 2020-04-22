@@ -26,7 +26,7 @@
 	});
 	
 	$("#listBtn").on("click", function(){
-		window.opener.location.reload(true);
 		window.close();
+		window.opener.location.reload(true);
 	});
 </script>

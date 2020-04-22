@@ -24,12 +24,12 @@ public class EnabledServlet extends HttpServlet {
 		if(member.getId().equals(id)) {
 			url="member/disabled_denied";
 		}else {
-			try {
-				MemberServiceImpl.getInstance().enabled(id);
-			} catch (SQLException e) {
-				url="error/500_error";
-				request.setAttribute("exception", e);
-			}
+//			try {
+//				MemberServiceImpl.getInstance().enabled(id);
+//			} catch (SQLException e) {
+//				url="error/500_error";
+//				request.setAttribute("exception", e);
+//			}
 		}
 		ViewResolver.view(request, response, url);
 	}

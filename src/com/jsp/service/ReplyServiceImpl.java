@@ -12,11 +12,6 @@ import com.jsp.request.SearchCriteria;
 
 public class ReplyServiceImpl implements ReplyService{
 	
-	private static ReplyServiceImpl instance=new ReplyServiceImpl();
-	private ReplyServiceImpl() {}
-	public static ReplyServiceImpl getInstance() {
-		return instance;
-	}
 	//리스너 ,web 처리-------------------
 	private ReplyDAO replyDAO;
 	public void setReplyDAO(ReplyDAO replyDAO){

@@ -19,15 +19,15 @@ public class CheckPaswordServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String mempwd ="";
 		
-		try {
-			MemberVO mem = null;
-			mem=MemberServiceImpl.getInstance().getMember(id);
-			if(mem!=null) {
-				mempwd=mem.getPwd();
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			MemberVO mem = null;
+//			mem=MemberServiceImpl.getInstance().getMember(id);
+//			if(mem!=null) {
+//				mempwd=mem.getPwd();
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 		response.getWriter().write(mempwd);
 		
 	}

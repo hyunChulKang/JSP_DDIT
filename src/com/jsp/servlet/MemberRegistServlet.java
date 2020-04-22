@@ -38,12 +38,12 @@ public class MemberRegistServlet extends HttpServlet {
 		MemberRegistRequest memberReq = new MemberRegistRequest(id,pwd,authority,email,picture,phone,name);
 		MemberVO member = memberReq.toMemberVO();
 		
-		try {
-			MemberServiceImpl.getInstance().regist(member);
-		} catch (SQLException e) {
-			e.printStackTrace();
-			url="member/regist_fail";
-		}
+//		try {
+//			MemberServiceImpl.getInstance().regist(member);
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//			url="member/regist_fail";
+//		}
 		
 		ViewResolver.view(request, response, url);
 		

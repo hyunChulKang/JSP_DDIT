@@ -20,13 +20,13 @@ public class CheckIDServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	String id = request.getParameter("id");
 	String userID= "";
-		try {
-			MemberVO member=null;
-			member=MemberServiceImpl.getInstance().getMember(id);
-			if(member!=null) userID=member.getId();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			MemberVO member=null;
+//			member=MemberServiceImpl.getInstance().getMember(id);
+//			if(member!=null) userID=member.getId();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
 		response.getWriter().print(userID);
 
 	}

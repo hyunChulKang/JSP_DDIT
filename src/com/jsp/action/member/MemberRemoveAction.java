@@ -10,10 +10,14 @@ import javax.servlet.http.HttpSession;
 
 import com.jsp.action.Action;
 import com.jsp.dto.MemberVO;
+import com.jsp.service.MemberService;
 import com.jsp.service.MemberServiceImpl;
 
 public class MemberRemoveAction implements Action{
-
+	private MemberService memberService;
+	public void setMemberService(MemberService memberService) {
+		this.memberService=memberService;
+	}
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -26,7 +30,7 @@ public class MemberRemoveAction implements Action{
 			url="member/remove_denied";
 		}else {
 			try {
-				MemberServiceImpl.getInstance().remove(id);
+				memberService.remove(id);
 			} catch (SQLException e) {
 				e.printStackTrace();
 				url="error/500_error";

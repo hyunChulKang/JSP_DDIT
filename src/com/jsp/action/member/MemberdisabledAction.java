@@ -10,10 +10,14 @@ import javax.servlet.http.HttpSession;
 
 import com.jsp.action.Action;
 import com.jsp.dto.MemberVO;
+import com.jsp.service.MemberService;
 import com.jsp.service.MemberServiceImpl;
 
 public class MemberdisabledAction implements Action {
-
+	private MemberService memberService;
+	public void setMemberService(MemberService memberService) {
+		this.memberService=memberService;
+	}
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -25,7 +29,7 @@ public class MemberdisabledAction implements Action {
 			url="member/disabled_denied";
 		}else {
 			try {
-				MemberServiceImpl.getInstance().disabled(id);
+				memberService.disabled(id);
 			} catch (SQLException e) {
 				url="member/disabled_fail";
 				e.printStackTrace();

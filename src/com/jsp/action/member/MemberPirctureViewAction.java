@@ -11,10 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jsp.action.Action;
+import com.jsp.service.MemberService;
 import com.jsp.utils.GetUploadPath;
 
 public class MemberPirctureViewAction implements Action {
-
+	private MemberService memberService;
+	public void setMemberService(MemberService memberService) {
+		this.memberService=memberService;
+	}
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

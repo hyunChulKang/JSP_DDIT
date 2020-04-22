@@ -13,36 +13,36 @@ import com.jsp.request.SearchCriteria;
 public class ReplyDAOImpl implements ReplyDAO{
 	
 	
-	private SqlSessionFactory sessionFactory;
-	public void setSqlSessionFactory(SqlSessionFactory sessionFactory) {
-		this.sessionFactory =sessionFactory;
+	private SqlSessionFactory sqlSessionFactory;
+	public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
+		this.sqlSessionFactory =sqlSessionFactory;
 	}
 	
 	
 	@Override
 	public void insertReply(ReplyVO reply) throws SQLException {
-		SqlSession session = sessionFactory.openSession(true);
+		SqlSession session = sqlSessionFactory.openSession(true);
 		session.update("Reply-Mapper.insertReply",reply);
 		session.close();
 		
 	}
 	@Override
 	public void updateReply(ReplyVO reply) throws SQLException {
-		SqlSession session = sessionFactory.openSession(true);
+		SqlSession session = sqlSessionFactory.openSession(true);
 		session.update("Reply-Mapper.updateReply",reply);
 		session.close();
 		
 	}
 	@Override
 	public void deleteReply(int rno) throws SQLException {
-		SqlSession session = sessionFactory.openSession(true);
+		SqlSession session = sqlSessionFactory.openSession(true);
 		session.update("Reply-Mapper.deleteReply",rno);
 		session.close();
 		
 	}
 	@Override
 	public List<ReplyVO> selectReplyListPage(int bno, SearchCriteria cri) throws SQLException {
-		SqlSession session=sessionFactory.openSession();
+		SqlSession session=sqlSessionFactory.openSession();
 		
 		int offset = cri.getPageStartRowNum();
 		int limit = cri.getPerPageNum();
@@ -56,7 +56,7 @@ public class ReplyDAOImpl implements ReplyDAO{
 	}
 	@Override
 	public int countReply(int bno) throws SQLException {
-		SqlSession session=sessionFactory.openSession();
+		SqlSession session=sqlSessionFactory.openSession();
 		int count=
 				(Integer)session.selectOne("Reply-Mapper.countReply",bno);
 		session.close();
@@ -64,7 +64,7 @@ public class ReplyDAOImpl implements ReplyDAO{
 	}
 	@Override
 	public int selectReplySeqNextValue() throws SQLException {
-		SqlSession session=sessionFactory.openSession();
+		SqlSession session=sqlSessionFactory.openSession();
 		int rno = session.selectOne("Reply-Mapper.selectReplySeqNextValue",null);
 		session.close();
 		return rno;

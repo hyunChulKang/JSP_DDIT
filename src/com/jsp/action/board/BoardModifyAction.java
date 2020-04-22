@@ -14,14 +14,14 @@ import com.jsp.service.BoardServiceImpl;
 
 public class BoardModifyAction implements Action {
 
-	private BoardService boardService = BoardServiceImpl.getInstance();
+	private BoardService boardService;// = BoardServiceImpl.getInstance();
 	public void setBoardService(BoardService boardService) {
 		this.boardService=boardService;
 	}
 	
 	@Override
-	public String execute(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String url="board/modify_success";
 		int bno = Integer.parseInt(request.getParameter("bno"));
 		String title = request.getParameter("title");
@@ -30,10 +30,10 @@ public class BoardModifyAction implements Action {
 		board.setBno(bno);
 		board.setTitle(title);
 		board.setContent(content);
+		
 		try {
 			boardService.modify(board);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return url;

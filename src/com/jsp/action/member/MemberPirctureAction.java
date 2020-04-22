@@ -14,12 +14,12 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import com.jsp.action.Action;
+import com.jsp.service.MemberService;
 import com.jsp.utils.GetUploadPath;
 import com.jsp.utils.MakeFileName;
 import com.jsp.utils.MakeLogForException;
 
 public class MemberPirctureAction implements Action {
-
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

@@ -18,8 +18,7 @@ import com.jsp.service.MemberServiceImpl;
 public class LoginAction implements Action {
 
 	//defalut의 개념으로 만들어 놓은것 
-	private MemberService memberService = MemberServiceImpl.getInstance();
-	
+	private MemberService memberService;// = MemberServiceImpl.getInstance();
 	//set메서드는 변경을 위해 만들어놓은것
 	public void setMemberService (MemberService memberService) {
 		this.memberService=memberService;

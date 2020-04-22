@@ -10,10 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.jsp.action.Action;
 import com.jsp.dto.MemberVO;
 import com.jsp.request.MemberRegistRequest;
+import com.jsp.service.MemberService;
 import com.jsp.service.MemberServiceImpl;
 
 public class MemberRegistAction implements Action {
-
+	private MemberService memberService;
+	public void setMemberService(MemberService memberService) {
+		this.memberService=memberService;
+	}
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -31,7 +35,7 @@ public class MemberRegistAction implements Action {
 		MemberVO member = memberReq.toMemberVO();
 		
 		try {
-			MemberServiceImpl.getInstance().regist(member);
+			memberService.regist(member);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			url="member/regist_fail";

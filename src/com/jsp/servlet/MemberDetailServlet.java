@@ -21,14 +21,14 @@ public class MemberDetailServlet extends HttpServlet {
 		String url="member/detail";
 		String id=request.getParameter("id");
 		MemberVO member=null;
-		try {
-			member=MemberServiceImpl.getInstance().getMember(id);
-			request.setAttribute("member", member);
-		} catch (SQLException e) {
-			e.printStackTrace();
-			url="error/500_error";
-			request.setAttribute("exception", e);
-		}
+//		try {
+//			member=MemberServiceImpl.getInstance().getMember(id);
+//			request.setAttribute("member", member);
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//			url="error/500_error";
+//			request.setAttribute("exception", e);
+//		}
 		ViewResolver.view(request, response, url);
 	}
 

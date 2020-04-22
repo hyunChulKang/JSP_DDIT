@@ -17,13 +17,13 @@ public class MeberRemoveServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id= request.getParameter("id");
 		String url="member/remove_success";
-		try {
-			MemberServiceImpl.getInstance().remove(id);
-		} catch (SQLException e) {
-			e.printStackTrace();
-			url="error/500_error";
-			request.setAttribute("exception", e);
-		}
+//		try {
+//			MemberServiceImpl.getInstance().remove(id);
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//			url="error/500_error";
+//			request.setAttribute("exception", e);
+//		}
 		
 		ViewResolver.view(request, response, url);
 	}

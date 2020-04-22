@@ -42,24 +42,24 @@ public class LoginServlet extends HttpServlet {
 		String pwd= request.getParameter("pwd");
 		
 		HttpSession session =request.getSession();
-		try {
-			MemberServiceImpl.getInstance().login(id, pwd);
-			
-			MemberVO loginUser= MemberServiceImpl.getInstance().getMember(id);
-			
-			session.setAttribute("loginUser", loginUser);
-			session.setMaxInactiveInterval(60*6);
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-			url="error/500_error";
-			request.setAttribute("exception", e);
-		} catch (NotFoundIDExcepiton | InvalidPasswordException e) {
-			//e.printStackTrace();
-			url="/commons/loginForm";
-			request.setAttribute("msg", e.getMessage());
-		}
-		
+//		try {
+//			MemberServiceImpl.getInstance().login(id, pwd);
+//			
+//			MemberVO loginUser= MemberServiceImpl.getInstance().getMember(id);
+//			
+//			session.setAttribute("loginUser", loginUser);
+//			session.setMaxInactiveInterval(60*6);
+//			
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//			url="error/500_error";
+//			request.setAttribute("exception", e);
+//		} catch (NotFoundIDExcepiton | InvalidPasswordException e) {
+//			//e.printStackTrace();
+//			url="/commons/loginForm";
+//			request.setAttribute("msg", e.getMessage());
+//		}
+//		
 		ViewResolver.view(request, response, url);
 	}
 
