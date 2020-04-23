@@ -45,7 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a href="<%=request.getContextPath() %>/board/list.do" class="nav-link">자유게시판</a>
       </li>
        <li class="nav-item d-none d-sm-inline-block">
-        <a href="<%=request.getContextPath() %>/pds/list" class="nav-link">자료실</a>
+        <a href="<%=request.getContextPath() %>/pds/list.do" class="nav-link">자료실</a>
       </li>
     </ul>
 

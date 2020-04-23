@@ -17,9 +17,7 @@ public class InitListener implements ServletContextListener {
 	public void contextDestroyed(ServletContextEvent ctxEvent) {
 		// TODO Auto-generated method stub
 	}
-
 	public void contextInitialized(ServletContextEvent ctxEvent) {
-
 		Map<String, Object> applicationContext = ApplicationContext.getApplicationContext();
 
 		ServletContext ctx = ctxEvent.getServletContext();
@@ -44,7 +42,6 @@ public class InitListener implements ServletContextListener {
 
 		}
 		//2. 인스턴스 의존성 확인 및 주입
-		
 		paramNames = ctx.getInitParameterNames();//의존성 확인을 위해 다시 할당한다.!
 		while (paramNames.hasMoreElements()) {
 			String paramName = paramNames.nextElement();
