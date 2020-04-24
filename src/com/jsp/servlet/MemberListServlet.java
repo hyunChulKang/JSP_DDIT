@@ -61,7 +61,7 @@ public class MemberListServlet extends HttpServlet {
 //		} catch (SQLException e) {
 //			e.printStackTrace();
 //		}
-		ViewResolver.view(request, response, url);
+//		ViewResolver.view(request, response, url);
 	}
 	
 	

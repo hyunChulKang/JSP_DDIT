@@ -31,7 +31,7 @@ public class EnabledServlet extends HttpServlet {
 //				request.setAttribute("exception", e);
 //			}
 		}
-		ViewResolver.view(request, response, url);
+//		ViewResolver.view(request, response, url);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

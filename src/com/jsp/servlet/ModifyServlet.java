@@ -29,7 +29,7 @@ public class ModifyServlet extends HttpServlet {
 //			url="error/500_error";
 //			request.setAttribute("exception", e);
 //		}
-		ViewResolver.view(request, response, url);
+//		ViewResolver.view(request, response, url);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -53,7 +53,7 @@ public class ModifyServlet extends HttpServlet {
 //			url="member/modify_fail";
 //		}
 		
-		ViewResolver.view(request, response, url);
+//		ViewResolver.view(request, response, url);
 		
 	}
 

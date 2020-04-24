@@ -19,7 +19,7 @@ public class LogoutServlet extends HttpServlet {
 		String url ="redirect:/commons/login";
 		HttpSession session = request.getSession();
 		session.invalidate();
-		ViewResolver.view(request, response, url);
+//		ViewResolver.view(request, response, url);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);

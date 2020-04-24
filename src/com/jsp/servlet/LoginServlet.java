@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
 //			request.setAttribute("msg", e.getMessage());
 //		}
 //		
-		ViewResolver.view(request, response, url);
+//		ViewResolver.view(request, response, url);
 	}
 
 }

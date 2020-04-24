@@ -133,8 +133,6 @@
 		jobForm.attr("action","list.do").attr("method","get");
 		jobForm.submit();
 	});
-	
-	
 </script>
 
 </body>

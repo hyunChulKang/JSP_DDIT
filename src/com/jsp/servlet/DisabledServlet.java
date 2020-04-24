@@ -32,7 +32,7 @@ public class DisabledServlet extends HttpServlet {
 //				e.printStackTrace();
 //			}
 		}
-		ViewResolver.view(request, response, url);
+//		ViewResolver.view(request, response, url);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

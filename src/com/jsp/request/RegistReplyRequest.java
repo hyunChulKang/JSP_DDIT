@@ -9,8 +9,6 @@ public class RegistReplyRequest {
 	private String replyer;
 	private String replytext;
 	
-	
-	
 	public int getBno() {
 		return bno;
 	}

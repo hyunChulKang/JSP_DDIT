@@ -20,7 +20,7 @@ public class MemberRegistServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="member/regist";
 		
-		ViewResolver.view(request, response, url);
+//		ViewResolver.view(request, response, url);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -45,7 +45,7 @@ public class MemberRegistServlet extends HttpServlet {
 //			url="member/regist_fail";
 //		}
 		
-		ViewResolver.view(request, response, url);
+//		ViewResolver.view(request, response, url);
 		
 		
 		

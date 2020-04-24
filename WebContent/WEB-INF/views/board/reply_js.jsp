@@ -150,10 +150,11 @@ function getPage(pageInfo){
 					alert("수정완료");
 					getPage("<%=request.getContextPath()%>/replies/list.do?bno=${board.bno}&page="+replyPage);
 					$('#newReplyText').val("");
-				}else{
-					alert("수정실패");
 				}
 				
+			},
+			error:function(err){
+				alert("삭제실패");
 			},
 			complete:function(){
 				$('#modifyModal').modal('hide');
@@ -164,17 +165,26 @@ function getPage(pageInfo){
 	
 		$('#replyDelBtn').on('click',function(event){
 			var rno = $('.modal-title').text();
+			
+			var sendDate={
+					bno:${board.bno},
+					rno:rno,
+					page:replyPage
+			};
+			
 			$.ajax({
-				url:"<%=request.getContextPath()%>/replies/remove.do?rno="+rno,
+				url:"<%=request.getContextPath()%>/replies/remove.do",
 				type:'post',
-				success:function(result){
-					if(result == "SUCCESS"){
+				data:JSON.stringify(sendData),
+				success:function(data){
+					var result = data.split(',');
+					if(result[0] == "SUCCESS"){
 						alert("삭제성공");
-						getPage("<%=request.getContextPath()%>/replies/list.do?bno=${board.bno}&page="+replyPage);
-						$('#newReplyText').val("");
-					}else{
-						alert("삭제실패");
+						getPage("<%=request.getContextPath()%>/replies/list.do?bno=${board.bno}&page="+result[1]);
 					}
+				},
+				error:function(err){
+					alert("삭제실패");
 				},
 				complete:function(){
 					$('#modifyModal').modal('hide');
