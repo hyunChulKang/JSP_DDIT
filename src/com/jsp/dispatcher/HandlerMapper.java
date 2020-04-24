@@ -25,7 +25,6 @@ public class HandlerMapper {
 		Iterator<String> it=actionSetHome.iterator();
 		while(it.hasNext()) {
 			String command = it.next();
-		
 			String actionClassName=rbHome.getString(command);
 			
 			System.out.println(actionClassName);

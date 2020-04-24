@@ -15,7 +15,6 @@ import com.jsp.request.SearchCriteria;
 
 public class MemberServiceImpl implements MemberService{
 	
-	
 	private MemberDAO memberDAO;/*=MemberDAOImpl.getMemberDaoImpl();*/
 	public void setMemberDAO(MemberDAO memberDAO) {
 		this.memberDAO=memberDAO;
