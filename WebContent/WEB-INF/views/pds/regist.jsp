@@ -33,7 +33,7 @@
 							</div>
 							<div class="form-group">
 								<label for="content">내 용</label>
-								<textarea class="form-control" name="content" id="content" rows="5"
+								<textarea class="textarea" name="content" id="content" rows="5"
 									placeholder="1000자 내외로 작성하세요."></textarea>
 							</div>
 							<div class="form-group">								
@@ -50,7 +50,7 @@
 						</form>
 					</div><!--end card-body  -->
 					<div class="card-footer">
-						<button type="button" class="btn btn-primary" id="registBtn">등 록</button>
+						<button type="button" class="btn btn-primary" id="registBtn" onclick="SubmitPdsRegist('form')">등 록</button>
 						&nbsp;&nbsp;&nbsp;&nbsp;
 						<button type="button" class="btn" id="cancelBtn" onclick="CloseWindow();">취 소</button>
 					</div><!--end card-footer  -->
@@ -64,7 +64,7 @@
 
 <%@ include file="/WEB-INF/views/commons/summernote.jsp" %>
 
-<%--<jsp:include page="regist_js.jsp" />--%>
+<jsp:include page="regist_js.jsp" />
 <jsp:include page="attach_js.jsp" /> 
 
 </body>

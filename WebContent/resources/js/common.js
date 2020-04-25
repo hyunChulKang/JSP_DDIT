@@ -12,7 +12,6 @@ function CloseWindow(){
 }
 
 function SubmitMemberRegist(formRole){
-	alert(formRole+" submit !");
 	var uploadCheck = $('input[name="checkUpload"]').val();
 	if(!(uploadCheck>0)){
 		alert("업로드한 사진이 없습니다.")

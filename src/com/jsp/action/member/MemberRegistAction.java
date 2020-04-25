@@ -24,6 +24,7 @@ public class MemberRegistAction implements Action {
 		String url="member/regist_success";
 		
 		String id =request.getParameter("id");
+		System.out.println(id+"ididididcidididididi");
 		String pwd=request.getParameter("pwd");
 		String email=request.getParameter("email");
 		String picture=request.getParameter("picture");

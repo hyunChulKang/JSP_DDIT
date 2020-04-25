@@ -96,8 +96,7 @@
   </div>
   <!-- /.content-wrapper -->
 
-<form role="imageForm" action="upload/picture" method="post"
-	enctype="multipart/form-data">
+<form role="imageForm" action="upload/picture" method="post" enctype="multipart/form-data">
 	<input id="inputFile" name="pictureFile" type="file" class="form-control" style="display:none;">
 	<input type="hidden" id="oldFile" name="oldPicture" value="${member.picture }" />
 	<input type="hidden" name="checkUpload" value="${empty member.picture ? '0':'1' }"/>
