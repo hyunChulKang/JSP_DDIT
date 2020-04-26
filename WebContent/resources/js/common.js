@@ -24,7 +24,6 @@ function SubmitMemberRegist(formRole){
 }
 
 function SubmitModify(form){
-	alert(form +"submit!!");
 	var forms = $('form[role="'+form+'"]');
 	forms.submit();
 }

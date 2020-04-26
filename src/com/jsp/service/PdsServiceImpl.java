@@ -30,7 +30,7 @@ public class PdsServiceImpl implements PdsService {
 	public Map<String, Object> getList(SearchCriteria cri) throws SQLException {
 		
 		List<PdsVO> pdsList = pdsDAO.selectPdsCriteria(cri);
-						
+		System.out.println("pdsList getAttachList : " + pdsList.get(0).getAttachList());
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.setTotalCount(pdsDAO.selectPdsCriteriaTotalCount(cri));
@@ -53,6 +53,7 @@ public class PdsServiceImpl implements PdsService {
 		int pno = pdsDAO.getSeqNextValue();
 		pds.setPno(pno);
 		pdsDAO.insertPds(pds);
+		System.out.println("pds.toString() :" + pds.toString());
 		for(AttachVO attach:pds.getAttachList()) {
 			attach.setPno(pno);
 			attach.setAttacher(pds.getWriter());

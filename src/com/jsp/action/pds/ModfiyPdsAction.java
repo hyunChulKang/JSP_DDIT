@@ -2,7 +2,7 @@ package com.jsp.action.pds;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,9 +22,7 @@ import com.jsp.utils.GetUploadPath;
 import com.jsp.utils.MakeFileName;
 import com.jsp.utils.MakeLogForException;
 
-import oracle.net.aso.f;
-
-public class RegistPdsAction implements Action{
+public class ModfiyPdsAction implements Action {
 
 	private PdsService pdsService;
 	public void setPdsService(PdsService pdsService) {
@@ -34,9 +32,10 @@ public class RegistPdsAction implements Action{
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		PdsVO pdsVO = new PdsVO();
-		pdsVO=uploadFile(request,response);
-		String url="pds/regist_success";
+		PdsVO pds = new PdsVO();
+		pds=uploadFile(request,response);
+		request.setAttribute("pds", pds);
+		String url="pds/modify_success";
 		return url;
 	}
 
@@ -49,7 +48,7 @@ public class RegistPdsAction implements Action{
 		PdsVO pdsVO = new PdsVO();
 		try {
 			pdsVO = saveFile(request,response);
-			pdsService.regist(pdsVO);
+			pdsService.modify(pdsVO);
 		} catch(Exception e) {
 			e.printStackTrace(); //개발중에 에러확인하기 위해 
 			MakeLogForException.makeLog(request,e);
@@ -136,6 +135,11 @@ public class RegistPdsAction implements Action{
 						System.out.println("content_____"+content);
 						pdsVO.setContent(content);
 						break;
+					case "pno":
+						String pno = item.getString("UTF-8");
+						System.out.println("pno_____"+pno);
+						pdsVO.setContent(pno);
+						break;
 					}
 				}
 			}
@@ -143,4 +147,3 @@ public class RegistPdsAction implements Action{
 		return pdsVO;
 	}
 }
-

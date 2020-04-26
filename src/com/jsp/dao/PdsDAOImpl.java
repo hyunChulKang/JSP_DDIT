@@ -27,7 +27,9 @@ public class PdsDAOImpl implements PdsDAO {
 		
 		List<PdsVO> pdsList=
 		   session.selectList("Pds-Mapper.selectSearchPdsList",cri,rowBounds);	
-			
+		for(PdsVO vo : pdsList) {
+			System.out.println("pdsList :"+vo.toString());
+		}
 		session.close();
 		return pdsList;
 	}

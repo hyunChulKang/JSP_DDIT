@@ -66,7 +66,8 @@
 				<table class="table table-bordered text-center">
 					<tr style="font-size:0.95em;">
 						<th style="width:10%;">번 호</th>
-						<th style="width:50%;">제목</th>
+						<th style="width:50%; " colspan="2">제목</th>
+						<th style="border-left: hidden;"></th>
 						<th style="width:15%;">작성자</th>
 						<th>등록일</th>
 						<th style="width:10%;">조회수</th>
@@ -83,9 +84,14 @@
 							<td>${pds.pno }</td>
 							<td id="pdsTitle" style="text-align: left; max-width: 100%;
 								overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-								<a href="javascript:OpenWindow('detail.do?pno=${pds.pno }','상세보기',600,400);">
+								<a href="javascript:OpenWindow('detail.do?pno=${pds.pno }&flag=inThelist','상세보기',600,400);">
 									<span class="col-sm-12">${pds.title }</span>
 								</a>
+							</td>
+							<td style="border-left: hidden; text-align: right; " colspan="2">
+							<%-- 	<c:if test="${empty pds.attachList }" >
+									<i class="fas fa-paperclip"></i>
+								</c:if> --%>
 							</td>
 							<td>${pds.writer }</td>
 							<td>

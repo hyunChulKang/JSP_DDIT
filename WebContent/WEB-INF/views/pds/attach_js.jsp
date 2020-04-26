@@ -5,12 +5,12 @@
 <script>
 $('#addFileBtn').on('click',function(event){
 	
-	if($('input[name="uploadFile"]').length >=5){
+	if($('input[role="cnt"]').length >=5){
 		alert("파일추가는 5개까지만 가능합니다.");
 		return;
 	}
 	
-	var input=$('<input>').attr({"type":"file","name":"uploadFile"})
+	var input=$('<input>').attr({"type":"file","name":"uploadFile", "role":"cnt"})
 	  .css("display","inline"); 
 	var div=$('<div>').addClass("inputRow");
 	div.append(input).append("<button style='border:0;outline:0;' class='badge bg-red' type='button'>삭제</button");

@@ -2,8 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <script>
-function SubmitPdsRegist(form){
-	var form = $('form[role="'+form+'"]');
-	form.submit();
-}
+	alert("글삭제 성공!!");
+	window.close();
+	window.opener.location.reload(true);
 </script>

@@ -2,8 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <script>
-function SubmitPdsRegist(form){
-	var form = $('form[role="'+form+'"]');
-	form.submit();
-}
+	alert("자료실 글수정 성공!!");
+	window.location.href="detail.do?pno=${pds.pno}&flag=inTheModify";
 </script>

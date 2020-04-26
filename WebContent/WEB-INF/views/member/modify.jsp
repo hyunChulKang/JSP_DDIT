@@ -40,7 +40,6 @@
 								<div class="" id="pictureView" style="border: 1px solid green; height: 200px; width: 140px; margin: 0 auto; margin-bottom:5px;"></div>														
 								<div class="input-group input-group-sm">
 									<label for="inputFile" class=" btn btn-warning btn-sm btn-flat input-group-addon">파일선택</label>
-																												<%--수정시 기존 이미지를 넣어둔다 --%>
 									<input id="inputFileName" class="form-control" type="text" name="picture" value=""/>
 									<span class="input-group-append-sm">											
 										<button type="button" class="btn btn-info btn-sm btn-append" onclick="upload_go();">업로드</button>											
@@ -56,7 +55,6 @@
 	                    <input name="id" type="text" readonly class="form-control" id="inputEmail3" value="${member.id }">
 	                  </div>
 	                </div>
-	
 	                <div class="form-group row">
 	                  <label for="inputPassword3" class="col-sm-3 control-label text-right">패스워드</label>
 	                  <div class="col-sm-9">
@@ -95,7 +93,6 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
 <form role="imageForm" action="upload/picture" method="post" enctype="multipart/form-data">
 	<input id="inputFile" name="pictureFile" type="file" class="form-control" style="display:none;">
 	<input type="hidden" id="oldFile" name="oldPicture" value="${member.picture }" />
@@ -109,7 +106,6 @@
 			</c:otherwise>
 		</c:choose> --%>
 </form>
-
 
 <%@ include file="picture_js.jsp" %>
 <script>
