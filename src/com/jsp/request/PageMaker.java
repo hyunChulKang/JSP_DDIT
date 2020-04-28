@@ -32,11 +32,15 @@ public class PageMaker {
 		prev = startPage == 1 ? false : true;
 		next = endPage * cri.getPerPageNum() >= totalCount ? false : true;
 	}
-	
+	//현재 화면 보여줄때
+	public String makeQuery() {
+		return makeQuery(cri.getPage());
+	}
+	//해당 화면 보여줄때
 	public String makeQuery(int page) {
-		String query="?page="+page+"?perPageNum="+cri.getPerPageNum()
-					+"?sertchType="+cri.getSearchType()
-					+"keyword="+cri.getKeyword();
+		String query="?page="+page+"&perPageNum="+cri.getPerPageNum()
+					+"&seartchType="+cri.getSearchType()
+					+"&keyword="+cri.getKeyword();
 		return query;
 	}
 	

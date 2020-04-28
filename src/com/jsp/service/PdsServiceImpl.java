@@ -43,8 +43,10 @@ public class PdsServiceImpl implements PdsService {
 	}
 	@Override
 	public PdsVO getPds(int pno) throws SQLException {
-		PdsVO pds = pdsDAO.selectPdsByPno(pno);
+		PdsVO pds = new PdsVO();
+		pds= pdsDAO.selectPdsByPno(pno);
 		List<AttachVO> attachList=attachDAO.selectAttachesByPno(pno);
+		System.out.println("attachList :"+attachList.toString());
 		pds.setAttachList(attachList);
 		return pds;
 	}
@@ -63,7 +65,7 @@ public class PdsServiceImpl implements PdsService {
 	@Override
 	public void modify(PdsVO pds) throws SQLException {
 		pdsDAO.updatePds(pds);		
-		//attachDAO.deleteAllAttach(pds.getPno());
+		 //attachDAO.deleteAllAttach(pds.getPno());
 		for(AttachVO attach:pds.getAttachList()) {
 			attach.setPno(pds.getPno());
 			attach.setAttacher(pds.getWriter());

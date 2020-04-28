@@ -60,9 +60,22 @@
 									<h5 style="display:inline;line-height:40px;">첨부파일  </h5>
 								</div>									
 								<div class="card-footer fileInput">
-								<%-- <c:forEach items="${pds.attachList }" var="attach">
-									<input type="button" value="${attach.fileName }"><br>
-								</c:forEach> --%>
+								 <c:forEach items="${pds.attachList }" var="attach">
+								 <div class="col-md-4 col-sm-4 col-xs-12" style="cursor: pointer;" onclick="location.href='<%=request.getContextPath() %>/attach/getFile.do?pno=${pds.pno }&ano=${attach.ano }';">
+								 <div class="info-box">
+									<span class="info-box-icon bg-red">
+										<i class="fa fa-copy"></i>
+									</span>
+									<div class="info-box-content">
+										<span class="info-box-text">
+											<fmt:formatDate value="${attach.regDate }" pattern="yyyy-MM-dd"/>
+										</span>
+										<span class="info-box-number">${attach.fileName }</span>
+									</div>
+									<%-- <input type="button" value="${attach.fileName }"><br> --%>
+									</div>
+								</div>
+								</c:forEach>
 								</div>
 							</div>
 						</div>					
@@ -77,46 +90,20 @@
 				</div><!-- end card -->				
 			</div><!-- end col-md-12 -->
 		</div><!-- end row  -->
-		
-		<!-- reply component start --> 
-		<div class="row">
-			<div class="col-md-12">
-				<div class="card card-info">					
-					<div class="card-body">
-						<!-- The time line -->
-						<div class="timeline">
-							<!-- timeline time label -->
-							<div class="time-label" id="repliesDiv">
-								<span class="bg-green">Replies List </span>
-							</div>
-						</div>
-						<div class='text-center'>
-							<ul id="pagination" class="pagination justify-content-center m-0">
-			
-							</ul>
-						</div>
-					</div>
-					<div class="card-footer">
-						<label for="newReplyWriter">Writer</label>
-						<input class="form-control" type="hidden" placeholder="USER ID" 
-							   id="newReplyWriter" readonly value="${loginUser.id }"> 
-						<label for="newReplyText">Reply Text</label>
-						<input class="form-control" type="text"	placeholder="REPLY TEXT" 
-						       id="newReplyText">
-						<br/>
-						<button type="button" class="btn btn-primary" 
-								id="replyAddBtn">ADD REPLY</button>
-					</div>				
-				</div>			
-				
-			</div><!-- end col-md-12 -->
-		</div><!-- end row -->
-		
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   
+  <form role="form">
+  	<input type='hidden' name='pno' value ="${pds.pno}">
+  	<input type='hidden' name='page' value ="${pageMaker.cri.page }">
+  	<input type='hidden' name='perPageNum' value ="${pageMaker.cri.perPageNum }">
+  	<input type='hidden' name='searchType' value ="${pageMaker.cri.searchType }">
+  	<input type='hidden' name='keyword' value ="${pageMaker.cri.keyword }">
+  	
+  	
+  </form>
 	<jsp:include page="detail_js.jsp"></jsp:include>
 	
  <%--	<%@ include file="reply_js.jsp" %> 

@@ -3,5 +3,5 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <script>
 	alert("자료실 글수정 성공!!");
-	window.location.href="detail.do?pno=${pds.pno}&flag=inTheModify";
+	window.location.href="detail.do${pageMaker.makeQuery()}&flag=inTheModify";
 </script>

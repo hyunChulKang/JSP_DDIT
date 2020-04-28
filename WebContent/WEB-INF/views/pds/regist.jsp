@@ -50,7 +50,7 @@
 						</form>
 					</div><!--end card-body  -->
 					<div class="card-footer">
-						<button type="button" class="btn btn-primary" id="registBtn" onclick="SubmitPdsRegist('form')">등 록</button>
+						<button type="button" class="btn btn-primary" id="registBtn">등 록</button>
 						&nbsp;&nbsp;&nbsp;&nbsp;
 						<button type="button" class="btn" id="cancelBtn" onclick="CloseWindow();">취 소</button>
 					</div><!--end card-footer  -->

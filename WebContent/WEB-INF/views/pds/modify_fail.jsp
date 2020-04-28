@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <script>
-	alert("글삭제 성공!!");
-	window.close();
-	opener.parent.searchList_go=(${pageMaker.cri.page}"<%=request.getContentType()%>/pds/list.do");
+	alert("서비스장애로 실패했습니다.");
+	history.go(-1);
 </script>

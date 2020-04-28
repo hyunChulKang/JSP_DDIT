@@ -4,5 +4,5 @@
 <script>
 	alert("글등록성공했습니다.");
 	window.close();
-	window.opener.location.reload(true);
+	window.opener.location.href="list.do?page=1&perPageNum=10";
 </script>

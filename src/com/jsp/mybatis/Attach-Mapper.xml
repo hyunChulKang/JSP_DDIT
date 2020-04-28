@@ -16,9 +16,8 @@
 	
 	<update id="insertAttach">
 		insert into 
-		attach (ano, uploadpath, filename, pno, attacher)
-		values (attach_seq.nextval, #{uploadPath}, #{fileName},
-				#{pno},#{attacher} )
+		attach (ano, uploadpath, filename, pno, attacher,fileType)
+		values (attach_seq.nextval, #{uploadPath}, #{fileName},#{pno},#{attacher},#{fileType} )
 	</update>
 	
 	<update id="deleteAttach">

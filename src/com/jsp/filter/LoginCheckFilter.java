@@ -8,7 +8,6 @@ import java.util.StringTokenizer;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -35,8 +34,7 @@ public class LoginCheckFilter implements Filter {
 		
 		
 		//제외할 url 확인
-		String reqUrl=httpReq.getRequestURI()
-				.substring(httpReq.getContextPath().length());
+		String reqUrl=httpReq.getRequestURI().substring(httpReq.getContextPath().length());
 		if(excludeCheck(reqUrl)) {
 			chain.doFilter(request, response);	
 			return;

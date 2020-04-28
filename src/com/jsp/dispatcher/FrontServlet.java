@@ -17,6 +17,7 @@ public class FrontServlet extends HttpServlet {
 	private ViewResolver viewResolver;
 	@Override
 	public void init(ServletConfig config) throws ServletException {
+		super.init(config);
 		String handlerMapperType = config.getInitParameter("handlerMapper");
 		String viewResolverType =  config.getInitParameter("viewResolver");
 		
@@ -35,7 +36,6 @@ public class FrontServlet extends HttpServlet {
 			e.printStackTrace();
 			System.out.println("[FrontServlet]" +viewResolver + "가 준비가 되지않았습니다.");
 		}
-		super.init(config);
 	}
 	
 	
